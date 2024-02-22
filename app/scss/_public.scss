@@ -1,0 +1,96 @@
+.public {
+	background: #F5F5FA;
+
+	&__container {
+		padding-top: 30px;
+		
+	}
+
+	&__wrapper{
+
+		@include vieport-md{
+		display: flex;
+		column-gap: 30px;
+		flex-wrap: wrap;
+		}		
+		@include vieport-lg{ 
+			flex-wrap: nowrap
+		}
+	}
+
+	&__services {}
+
+	&__services-link {
+		@include castom-link;
+	}
+
+	&__title {
+		margin-bottom: 30px;
+	}
+
+	&__card {
+		margin-bottom: 30px;	
+		background: #ffffff;
+		border-radius: $radius-md;
+		overflow: hidden;
+
+		@include vieport-md{
+		flex: 1 0 45%;
+		}	
+		@include vieport-lg{
+			flex: 1 0 30%	;
+		}
+		
+	}
+
+
+}
+.container {
+}
+.title {
+}
+.card {
+
+	&__figure {
+
+		overflow: hidden;
+		width: auto;
+		height: auto;
+
+	}
+
+	&__pic{
+
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+
+		@include vieport-md{
+			height: 200px;
+			
+		}
+	}
+
+	&__desc{
+		padding: 30px;
+	}
+
+	&__header {}
+
+	&__subtitle {
+		margin-bottom: 15px;
+
+	}
+
+	&__data {
+		color: $text-color;
+		border-bottom: 4px solid $separator-color;
+		padding-bottom: 15px;
+	}
+
+	&__body {
+		padding-top: 15px;
+	}
+
+	&__copy {	}
+}

@@ -1,0 +1,101 @@
+.partners {
+
+	&__container {
+		
+	}
+
+	&__title {
+		color: $main-color;
+		font-weight: 700;
+		text-transform: uppercase;
+		text-align: center;
+		padding-bottom: 30px;
+		&--services{
+			padding-top: 60px;
+		}
+	}
+	
+
+	&__list {
+		@include vieport-md{
+		
+			
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(4, 1fr);
+		
+		}
+		@include vieport-lg{
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+		}
+
+		@include vieport-xxl{
+			
+			border-radius:$radius-md;
+			overflow: hidden;
+		}
+	}
+
+	&__list-item {
+		height: 120px;
+		&:nth-child(1){
+			background: url(../images/hillel.svg) #1C4280 no-repeat center
+			;
+		}
+		&:nth-child(2){
+			background: url(../images/wannabiz.svg) #143646 no-repeat center
+			;
+		}
+		&:nth-child(3){
+			background: url(../images/tapgerine.svg) #F48B30 no-repeat center
+			;
+		}
+		&:nth-child(4){
+			background: url(../images/3dlook.svg) #9E4DC3 no-repeat center
+			;
+		}
+		&:nth-child(5){
+			background: url(../images/orangear.svg) #FD9339 no-repeat center
+			;
+		}	
+		&:nth-child(6){
+				background: url(../images/adtelligent.svg) #E2E2E4 no-repeat center
+				;
+		}
+		&--none{
+			display: none;
+			}	
+		@include vieport-md{
+			display: block;
+			&:nth-child(7){
+				background: url(../images/clickky.svg) #C71C36 no-repeat center
+				;
+			}
+			&:nth-child(8){
+				background: url(../images/eco-leasing.svg) #DCF3F9 no-repeat center
+				;
+			}
+			&:nth-child(9){
+				background: url(../images/ingratek.svg) #EAEAEA no-repeat center
+				;
+			}
+			&:nth-child(10){
+				background: url(../images/city-par.svg) #282240 no-repeat center
+				;
+			}
+			&:nth-child(11){
+				background: url(../images/artprint.svg) #1D4568 no-repeat center
+				;
+			}
+			&:nth-child(12){
+				background: url(../images/ultimatecard.svg) #000000 no-repeat center
+				;
+			}
+		}
+		
+			
+	}
+	}
+
+

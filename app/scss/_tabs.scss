@@ -1,0 +1,113 @@
+.tabs {
+	padding: 30px 0;
+	line-height: 1.2;
+	@include vieport-md{
+		padding: 60px 0;
+	}
+	
+	&__container {
+		@include vieport-lg{
+		display: flex;
+		}
+	}
+
+	&__links {
+		display: flex;
+		flex-wrap: nowrap;
+		overflow: auto;
+		gap: 30px;
+		white-space: nowrap;
+		padding:0 30px 30px 0;
+		margin-right: -30px;
+		&::-webkit-scrollbar {
+			width: 0;
+			height: 0;
+		}
+		@include vieport-md{
+				padding-bottom: 60px;
+				padding-right: calc(50vw - 324px);
+				margin-right: calc(-50vw + 324px);
+		}
+		@include vieport-lg{
+			margin-right: 0;
+			padding: 0;
+			white-space: wrap;
+			overflow: visible;
+			flex-direction: column;
+			align-items: end;
+			padding-right: 60px;
+			flex: 1 1 47%;
+		}
+		@include vieport-xl{
+			flex: 1 1 40%;
+		}
+		@include vieport-xxl{
+			flex: 1 1 30%;
+		}
+		
+	}
+
+	&__links-item {
+		@include subtitle ($text-color);
+		cursor:pointer;
+		&:hover{
+			color:$accent-color;
+		}
+
+		&.active{
+			@include	main-gradient-text
+		}
+	
+		
+	}
+
+	&__content {
+		padding-top: 30px;
+		border-top: 4px solid #FFFFFF4D;
+		@include vieport-md{
+				padding-top:60px;
+		}
+		@include vieport-lg{
+			flex: 1 1 50%;
+			margin: 0;
+			padding: 0;
+			border-left: 4px solid #FFFFFF4D;
+			padding-left: 60px;
+			border-top: 0px solid #000;
+		}
+		@include vieport-xl{
+			flex: 1 1 60%;
+			display: flex;
+			align-items: center;
+		}
+		@include vieport-xxl{
+			flex: 1 1 70%;
+		}
+	}
+
+	&__content-item {
+		h2{
+			font-size: 20px;
+			color:$basic-white;
+			font-weight: 700;
+			margin-bottom: 30px;
+		}
+		p{
+			font-size: 19px;
+			color: $basic-white;
+		}
+		display: none;
+		&.active{
+				display: block;
+			}
+		@include vieport-md{
+			h2{
+				font-size: 30px;
+			}
+			
+			
+		}
+	}
+}
+.container {
+}

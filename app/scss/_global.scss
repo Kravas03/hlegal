@@ -1,0 +1,84 @@
+body {
+	font-family: 'Montserrat';
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+.wrapper{
+	background: $gradient-supersoft;
+	border-bottom-left-radius: $radius-md;
+	border-bottom-right-radius: $radius-md;
+	position: relative;
+
+	&::before, &::after{
+		content:'';
+		position: absolute;
+		left: 20px;
+		right: 20px;
+		bottom: -10px;
+		background-color: #CACADB;
+		height: 10px;
+		border-bottom-left-radius: $radius-md;
+		border-bottom-right-radius: $radius-md;
+	}
+	&::after{
+		background-color: #E7E7F2;
+		bottom: -20px;
+		left: 40px;
+		right: 40px;
+	}
+}
+
+.container{
+	// від 0 до бескінечності
+	padding: 0 30px;
+
+	@include vieport-md {
+		// від 768 до бескінечності
+		max-width: 708px;
+		margin: 0 auto;
+	}
+
+	@include vieport-lg {
+		// від 1024 до бескінечності
+		max-width: 964px;
+	}
+
+	@include vieport-xl {
+		// від 1440 до бескінечності
+		max-width: 1380px;
+	}
+
+	@include vieport-xxl {
+		// від 1920 до бескінечності
+		max-width: 1660px;
+	}
+}
+
+.dotted {
+	display: none;
+
+	@include vieport-md {
+		display: inline-block;
+		width: 6px;
+		height: 6px;
+		border-radius: $radius-rounded;
+		background: $separator-color;
+
+		&--gray {
+			background: $text-color;
+		}
+	}
+}
+
+.title{
+	@include main-gradient-text;
+	@include subtitle ($gradient-red-text);
+}
+.blue-link {
+	@include base-link;
+	color: $active-color;
+	font-weight: 700;
+	cursor: pointer;
+}
+

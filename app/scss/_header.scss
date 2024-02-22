@@ -1,0 +1,370 @@
+.header__wrapper{
+	
+}
+
+.head {
+	min-height: 100vh;
+	justify-content: space-between;
+	display: flex;
+	flex-flow: column ;
+	color: $basic-white;
+	background: url(../images/hilegal-bg.png) no-repeat center /auto 100% ;
+	&__header {
+	
+
+
+	}
+
+	&__title {
+		@include title;
+		padding: 0 30px;
+		text-transform: lowercase;
+		text-align: center;
+	}
+
+	&__link {
+		width: 42px;
+		height: 42px;	
+		border: 2px solid $text-color;
+		border-radius: $radius-rounded;
+		position: relative;
+		margin: 0 auto 30px;
+		&:hover{
+			border: 2px solid $accent-color;
+			transition: 0.2s;
+		}
+		&::before{
+			content: '';
+			position: absolute;
+			top: 9px;
+			left: 12px;
+			width: 15px;
+			height: 15px;
+			border-bottom: 2px solid $basic-white;
+			border-left: 2px solid $basic-white;
+			transform: rotate(-45deg);
+			
+			
+		}	
+		&:hover::before{
+			border-bottom: 2px solid $accent-color;
+			border-left: 2px solid $accent-color;
+			transition: 0.2s;	
+		}	
+		
+	}
+}
+.header {
+	@include vieport-md{
+		padding: 50px 0 0;
+	}
+
+	&__container {	
+		@include vieport-lg{
+		grid-template-areas:
+		"logo inner"
+		"logo nav";
+		display: grid;
+		grid-template-columns: auto 1fr;
+		}
+	}
+
+	
+
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: rgba(245, 245, 250, 0.20);
+		padding: 10px 30px;
+		margin: 0 -30px 15px;
+
+		@include vieport-md{
+			justify-content: start;
+			gap:6px;
+			background: transparent;
+			margin: 0 0 30px;
+			padding: 0;
+		}
+		@include vieport-lg{
+			grid-area: inner;
+			justify-content: flex-end;
+			margin: 0;
+		}
+		
+	}
+
+	&__langs {
+		@include flex-center;
+		gap: 3px;
+
+	}
+
+	&__langs-item {
+	
+	}
+
+	&__langs-link {
+		color:$basic-white;
+		text-transform: uppercase;
+		font-weight: 700;
+		padding: 5px 7px;
+		letter-spacing: 1px;
+		font-size: 12px;
+		display: block;
+		text-decoration: none;
+		border-radius: $radius-sm;
+		&.active{
+			background-color: $accent-color;
+			
+		}
+		&:hover{
+			background-color: $accent-color;
+		}
+	}
+	
+	&__adress {
+		color:$text-color;
+		display: none;
+		@include vieport-md{
+			display: block;
+		}
+	}
+
+	&__phone {
+		@include base-link ($color:$basic-white);
+		font-weight: 700;
+		font-size: 16px;
+	}
+
+	&__social {
+		display: none;
+		@include vieport-md{
+			display: block;
+			line-height: 0;
+		}
+	}
+
+	&__box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	
+		@include vieport-lg{
+						grid-area: logo;
+						}	
+		}		
+
+		.breadcrumbs {
+			display: flex;
+			justify-content: center;
+			align-items: start;
+			gap: 4px;
+			@include  vieport-md{
+				gap: 10px;
+			}
+			&__item {
+				color:#fff;
+				font-size: 20px;
+				height: 100%;
+			}
+			
+			&__link {
+				display: block;
+				cursor: pointer;
+				&--services{
+					line-height: 25px;
+					@include vieport-md{
+						font-size: 36px;
+						line-height: 45px;
+						cursor: default;
+					}
+				}
+			}
+
+			&__slash{
+				position: relative;
+				width: 10px;
+				height: 26px;
+				
+				&::after{
+					content: '/';
+					color: $accent-color;
+					top: 50%;
+					right:0	;
+					transform: translate(0,-50% );
+					position: absolute;
+					font-size: 30px;
+					
+					@include vieport-md{
+						top: 100%;
+						right: -10px;
+						font-size: 60px;
+					}
+					
+				}
+			}
+	}
+
+		
+	
+	
+
+		&__box-logo {
+			cursor: pointer;
+		
+			img{
+				width: 69px;
+				height: 32px;
+				
+					@include vieport-md{
+						width: 130px;
+						height: 60px;
+					}
+			}
+			
+		}
+
+	&__box-burger {
+		width: 26px;
+		height: 20px;
+		position: relative;
+		cursor: pointer;
+		&::before,&::after, span{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 2.5px;
+			background: $basic-white;
+		}
+		&::after{
+			top: auto;
+			bottom: 0;
+		}
+		span{
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		@include vieport-md{
+			display: none;
+		}
+	}
+
+	&__nav {
+
+		position: fixed;
+		bottom: -200%;
+		left: 8px;
+		right: 8px;
+		background: $basic-white;
+		border-radius:$radius-md $radius-md 0 0 ;
+		z-index: 10;
+		padding: 12px;
+		transition: bottom .2s linear;
+		&.active{
+			bottom: 0;	
+		}
+
+		@include vieport-md{
+			display: flex;
+		
+			margin-top: 30px;
+			background: transparent;
+			position: static;
+			border-radius:  0;
+			padding: 0;
+		}
+
+		@include vieport-lg{
+			grid-area: nav;
+			justify-content: end;
+			margin: 0;
+			}
+		}
+
+		&__nav-close {
+			display: block;
+			width: 26px;
+			height: 26px;
+			position: relative;
+			margin-left: auto;
+			cursor: pointer;
+			&::before, &::after{
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 0;
+				right: 0;
+				height: 2px;
+				background: $accent-color;
+				transform: rotate(45deg);
+			}
+			&::after{
+				transform: rotate(-45deg);
+			}
+			@include vieport-md{
+			display: none;
+		}
+	}
+
+	&__list {
+		color:$basic-white;
+		text-decoration: none;
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		text-align: center;
+		margin-top: 20px;
+		@include vieport-md{
+			flex-direction: row;
+			margin-top: 0;
+		}
+	}
+
+	&__list-item {}
+
+	&__list-link {
+		color:$regular-color;
+		border-radius: $radius-md;
+		background: $bg-color;
+		font-size: 24px;
+		font-weight: 700;
+		padding: 7px 0;
+		display: block;
+		border: 2px solid #00000000;
+		@include base-link ($regular-color, $active-color);
+		&:active{
+			background: $separator-color;
+			
+		}
+		&:hover{
+			color: $accent-color;
+		}
+		@include vieport-md{
+			background: transparent;
+			@include base-link ($basic-white, $active-color);
+			padding: 0;
+			font-size: 16px;
+			border-radius: 0;
+			&--services{
+			&.active{
+				color: $accent-color;
+				border-bottom :2px solid $accent-color;
+			}
+		
+			&:hover{
+				border-bottom: 2px solid $accent-color;
+				color:$accent-color;
+			}
+			}
+			&:active{
+				background: transparent;
+			}
+			
+		}
+
+	}
+	}
